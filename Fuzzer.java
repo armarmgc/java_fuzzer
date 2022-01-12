@@ -179,7 +179,7 @@ public class Fuzzer {
 
         // Run program with mutated file as input
         Process process = runtime.exec(
-            String.format("./%s %s %s",
+            String.format("./targets/%s %s %s",
                 targetFile,
                 options,
                 mutateFile
@@ -191,7 +191,7 @@ public class Fuzzer {
         if (exitCode == 139) {
             int hash = Arrays.hashCode(input);
 
-            System.out.println(String.format("[ %s ] Found crash - input `%s` - %08x", targetFile, inpFile.getFileName(), hash));
+            System.out.println(String.format("[ %s ] Found crash - input `%s` - hash %08x", targetFile, inpFile.getFileName(), hash));
             crashes.getAndIncrement();
 
             // Log crash to file

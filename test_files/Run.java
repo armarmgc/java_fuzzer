@@ -2,16 +2,16 @@ class Run {
     public static void main(String[] args) {
         Fuzzer fuzzer1 = new Fuzzer(
             new String[] { "objdump", "-x" },    // Program and arguments
-            "inpfiles",                          // Directory with input files (corpus)
-            "tmp_inpfiles",                      // Directory to store temporary files
+            "inp_files",                          // Directory with input files (corpus)
+            "tmp_files",                      // Directory to store temporary files
             "logs",                              // Directory to store the log file
             "fuzzer_log"                         // Filename to store log file
         );
 
         Fuzzer fuzzer2 = new Fuzzer(
             new String[] { "readelf", "-l" },    // Program and arguments
-            "inpfiles",                          // Directory with input files (corpus)
-            "tmp_inpfiles",                      // Directory to store temporary files
+            "inp_files",                          // Directory with input files (corpus)
+            "tmp_files",                      // Directory to store temporary files
             "logs",                              // Directory to store the log file
             "fuzzer_log"                         // Filename to store log file
         );
